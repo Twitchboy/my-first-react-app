@@ -1,44 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class PostItem extends Component {
+// 无状态组件，函数定义
+function PostItem (props) {
+    const handleVoteClick = () => {
+        props.onVote(props.post.id)
+    };
+    const { post } = props;
 
-    constructor (props) {
-        super(props);
-
-        // 给组件 UI 初始化一个状态
-        this.state = {
-            vote: 0
-        };
-    }
-    // 处理点赞事件，更新点赞次数状态
-    handVoteClick () {
-        let vote = this.state.vote;
-        vote++;
-        this.setState(
-            {
-                vote: vote
-            }
-        )
-    }
-
-    render() {
-        const {title, author, createTime} = this.props;
-        return(
-            <li>
-                <div>{title}</div>
-                <div>创建人：<span>{author}</span></div>
-                <div>创建时间：<span>{createTime}</span></div>
-                <div>
-                    <button
-                        onClick={ () => {this.handVoteClick();} }
-                    >
-                        点赞<span role="img" aria-label="👍">👍</span>
-                    </button>
-                    &nbsp;<span>{this.state.vote}</span>
-                </div>
-            </li>
-        );
-    }
+    return(
+        <li>
+            <div>{post.title}</div>
+            <div>创建人：<span>{post.author}</span></div>
+            <div>创建时间：<span>{post.createTime}</span></div>
+            <div>
+                <button
+                    onClick={handleVoteClick}
+                >
+                    点赞<span role="img" aria-label="👍">👍</span>
+                </button>
+                &nbsp;<span>{post.vote}</span>
+            </div>
+        </li>
+    );
 }
 
 export default PostItem;
