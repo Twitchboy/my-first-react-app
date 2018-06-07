@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PostItem from './PostItem';
+import './css/postlist.css';
 
 class PostList extends Component {
 
@@ -20,7 +21,7 @@ class PostList extends Component {
         this.timer = setTimeout(() => {
             this.setState({
                 posts: [
-                    { id: 1, title: '大家一起来讨论React吧', author: 'Junting', create_time: '2018-06-01 10:20', vote: 0 },
+                    { id: 1, title: '我不是一个前端', author: 'Junting', create_time: '2018-06-01 10:20', vote: 0 },
                     { id: 2, title: '前端框架，最爱React', author: 'Junting', create_time: '2018-06-02 10:30', vote: 0 },
                     { id: 3, title: 'Web App 时代已经到来', author: 'Junting', create_time: '2018-06-03 10:40', vote: 0 },
                     { id: 4, title: 'IOC,割韭菜', author: 'Junting', create_time: '2018-06-04 10:50', vote: 0 }
@@ -52,8 +53,8 @@ class PostList extends Component {
 
     render () {
         return (
-            <div>
-                帖子列表：
+            <div className='container'>
+                <h2>话题列表</h2>
                 <ul>
                     {this.state.posts.map((item) =>
                         <PostItem
