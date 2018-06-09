@@ -59,7 +59,7 @@ class PostList extends Component {
                     {this.state.posts.map((item) =>
                         <PostItem
                            post = {item}
-                           key={item.title}
+                           key={item.id}
                            onVote = {this.handleVote}
                         />
                     )}
