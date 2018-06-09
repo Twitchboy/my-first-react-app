@@ -7,11 +7,11 @@ function PostItem (props) {
     const handleVoteClick = () => {
         props.onVote(props.post.id)
     };
-    const { post } = props;
+    const { post, subject } = props;
 
     return(
         <li className="item">
-            {/* <div className="title">{subject}</div> */}
+            <div className="title">{subject.title}</div>
             <div className="title">{post.title}</div>
             <div>创建人：<span>{post.author}</span></div>
             <div>创建时间：<span>{post.createTime}</span></div>
@@ -37,7 +37,9 @@ PostItem.propTypes = {
 
 
 PostItem.defaultProps = {
-    subject: "Junting is so cute."
+    subject: {
+        title: "It's so cool."
+    }
 
 }
 export default PostItem;
