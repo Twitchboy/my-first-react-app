@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PostItem from './PostItem';
+import SimpleFormRef from './SimpleFormRef';
 import './css/postlist.css';
 
 class PostList extends Component {
@@ -76,6 +77,7 @@ class PostList extends Component {
                         />
                     )}
                 </ul>
+                <SimpleFormRef />
             </div>
         );
     }
