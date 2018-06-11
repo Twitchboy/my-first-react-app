@@ -5,18 +5,27 @@ import ListComponent from './React16Render/ListComponent';
 import StringComponent from './React16Render/StringComponent';
 import ErrorBoundary from './React16ErrorHandler/ErrorBoundary';
 import { Profile } from './React16ErrorHandler/Profile';
+import Modal from './React16PortalsApi/Modal'
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: {name: 'Junting'}
+      user: {name: 'Junting'},
+      showModal: true
     }
     this.handleError = this.handleError.bind(this)
+    this.closeModal = this.closeModal.bind(this)
   }
 
   handleError (event) {
     this.setState({
       user: null
+    })
+  }
+
+  closeModal (event) {
+    this.setState({
+      showModal: false
     })
   }
 
@@ -39,6 +48,14 @@ class App extends Component {
           <Profile user={this.state.user} />
         </ErrorBoundary>
         <button onClick={this.handleError}>点击</button>
+
+        {
+          this.state.showModal && (
+            <Modal onClose={this.closeModal}>
+              Modal Dialog~
+            </Modal>
+          )
+        }
       </div>
     );
   }
