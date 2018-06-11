@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ListComponent from './React16Render/ListComponent';
+import StringComponent from './React16Render/StringComponent';
 
 class App extends Component {
   render() {
@@ -13,6 +15,10 @@ class App extends Component {
         <p className="App-intro">
           Hello world！
         </p>
+        <ul>
+          <ListComponent />
+        </ul>
+        <p><StringComponent /></p>
       </div>
     );
   }
