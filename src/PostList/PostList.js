@@ -13,6 +13,7 @@ class PostList extends Component {
 
         this.timer = null;  // 定时器
         this.handleVote = this.handleVote.bind(this); // React.js 查看为什么需要手动绑定 this
+        this.handleOnSave = this.handleOnSave.bind(this); // React.js 查看为什么需要手动绑定 this
     }
 
     // 组件还没挂载时
@@ -21,7 +22,7 @@ class PostList extends Component {
         this.timer = setTimeout(() => {
             this.setState({
                 posts: [
-                    { id: 1, title: '', author: 'Junting', create_time: '2018-06-01 10:20', vote: 0 },
+                    { id: 1, title: 'React', author: 'Junting', create_time: '2018-06-01 10:20', vote: 0 },
                     { id: 2, title: '前端框架，最爱React', author: 'Junting', create_time: '2018-06-02 10:30', vote: 0 },
                     { id: 3, title: 'Web App 时代已经到来', author: 'Junting', create_time: '2018-06-03 10:40', vote: 0 },
                     { id: 4, title: 'IOC,割韭菜', author: 'Junting', create_time: '2018-06-04 10:50', vote: 0 }
@@ -51,6 +52,16 @@ class PostList extends Component {
         });
     }
 
+    handleOnSave (post) {
+        const posts = this.state.posts.map(item => {
+            return item.id === post.id ? post : item
+        });
+
+        this.setState({
+            posts
+        })
+    }
+
     render () {
         return (
             <div className='container'>
@@ -61,6 +72,7 @@ class PostList extends Component {
                            post = {item}
                            key={item.id}
                            onVote = {this.handleVote}
+                           onSave = {this.handleOnSave}
                         />
                     )}
                 </ul>
