@@ -6,6 +6,8 @@ import StringComponent from './React16Render/StringComponent';
 import ErrorBoundary from './React16ErrorHandler/ErrorBoundary';
 import { Profile } from './React16ErrorHandler/Profile';
 import Modal from './React16PortalsApi/Modal'
+import CustomDom from './React16CustomDom/CustomDom';
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -56,6 +58,9 @@ class App extends Component {
             </Modal>
           )
         }
+
+        <p>自定义DOM属性</p>
+        <CustomDom />
       </div>
     );
   }
