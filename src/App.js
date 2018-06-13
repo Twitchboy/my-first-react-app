@@ -17,6 +17,10 @@ class App extends Component {
     this.closeModal = this.closeModal.bind(this)
   }
 
+  componentDidMount() {
+    console.log
+  }
+
   handleError (event) {
     this.setState({
       user: null
