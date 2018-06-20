@@ -18,5 +18,6 @@
     "fetch-mock": "^6.4.4",
     "mock": "^0.1.1",
     "mockjs": "^1.0.1-beta3"
-  }
+  },
+  "proxy": "https://d.apicloud.com/mcm/api"
 }
