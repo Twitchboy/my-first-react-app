@@ -1,4 +1,4 @@
-import react, {Component} from 'react';
+import React, {Component} from 'react';
 import PostEditor from './PostEditor';
 import PostView from './PostView';
 import CommentList from './CommentList';
@@ -59,7 +59,7 @@ class Post extends Component {
     }
 
     // 处理保存帖子（编辑状态中）
-    handlePostSave () {
+    handlePostSave (data) {
         const postId = this.props.match.params.id;
         this.savePost(postId, data);
     }

@@ -1,6 +1,6 @@
 import React from "react";
 import { getFormatDate } from "../utils/date";
-import "./PostView.css";
+import "../assets/css/postView.css";
 
 function PostView(props) {
   const { post, editable, onEditClick } = props;

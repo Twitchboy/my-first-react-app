@@ -1,4 +1,4 @@
-import react, {Component} from 'react';
+import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import {post} from '../utils/request';
 import url from '../utils/url';

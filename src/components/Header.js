@@ -1,9 +1,10 @@
-import react, {Component} from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import '../assets/css/header.css'
 
 class Header extends Component {
     render() {
+        const {username, onLogout, location} = this.props;
         return (
             <div className="header">
                 <div className="nav">

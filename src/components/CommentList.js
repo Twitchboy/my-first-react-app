@@ -1,4 +1,4 @@
-import react, {Component} from 'react';
+import React, {Component} from 'react';
 import CommentsView from './CommentsView';
 import {getFormatDate} from '../utils/date';
 import "../assets/css/commentList.css"
