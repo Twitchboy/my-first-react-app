@@ -5,6 +5,7 @@ import '../assets/css/postItem.css';
 class PostItem extends Component {
     render () {
         const {post} = this.props;
+
         return(
             <li className="postItem">
                 <div className="title">{post.title}</div>
@@ -15,7 +16,7 @@ class PostItem extends Component {
                     更新时间：<span>{getFormatDate(post.updatedAt)}</span>
                 </div>
                 <div className="like">
-                    <span>👍</span>
+                    <span role="img" aria-label="👍">👍</span>
                     <span>{post.vote}</span>
                 </div>
             </li>

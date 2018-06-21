@@ -21,7 +21,7 @@ function PostView(props) {
         <div className="content">{post.content}</div>
       </div>
       <div className="vote">
-        <span>👍</span>
+        <span role="img" aria-label="👍">👍</span>
         <span>{post.vote}</span>
       </div>
     </div>

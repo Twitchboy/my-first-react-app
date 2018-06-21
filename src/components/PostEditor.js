@@ -5,10 +5,10 @@ class PostEditor extends Component {
     constructor(props) {
         super(props);
 
-        const {post} = this.props;
+        const { post } = this.props;
         this.state = {
-            title: post && post.title || '',
-            content: post && post.content || ''
+            title: (post && post.title) || '',
+            content: (post && post.content) || ''
         }
 
         this.handelChange = this.handelChange.bind(this);

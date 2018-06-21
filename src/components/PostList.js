@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import PostEditor from './PostEditor';
 import PostsView from './PostsView';
 import {get, post} from '../utils/request';

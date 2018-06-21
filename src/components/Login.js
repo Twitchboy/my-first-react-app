@@ -45,7 +45,7 @@ class Login extends Component {
             } else {
                 // 保存登录信息到 sessionStorage
                 sessionStorage.setItem('userId', data.userId);
-                sessionStorage.setItem('username', data.username);
+                sessionStorage.setItem('username', username);
                 // 登录成功后，设置 redirectToReferrer 为 true
                 this.setState({
                     redirectToReferrer: true

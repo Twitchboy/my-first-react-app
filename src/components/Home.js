@@ -12,10 +12,10 @@ class Home extends Component {
       username: sessionStorage.getItem("username")
     };
 
-    this.onLogout = this.onLogout.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
-  onLogout() {
+  handleLogout() {
     // 注销用户
     sessionStorage.removeItem("userId");
     sessionStorage.removeItem("username");
@@ -28,7 +28,7 @@ class Home extends Component {
 
   render() {
     const { match, location } = this.props;
-    const { username } = this.state;
+    const { userId, username } = this.state;
     return (
       <div>
         <Header
@@ -40,12 +40,12 @@ class Home extends Component {
         <Route
           path={match.url}
           exact
-          render={props => <PostList username={username} {...props} />}
+          render={props => <PostList userId={userId} {...props} />}
         />
         {/* 帖子详情路由 */}
         <Route
           path={`${match.url}/:id`}
-          render={props => <Post username={username} {...props} />}
+          render={props => <Post userId={userId} {...props} />}
         />
       </div>
     );

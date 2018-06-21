@@ -17,8 +17,11 @@ class Post extends Component {
         };
 
         this.handleEditClick = this.handleEditClick.bind(this);
+        this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
         this.handlePostCancel = this.handlePostCancel.bind(this);
         this.handlePostSave = this.handlePostSave.bind(this);
+        this.refreshComments = this.refreshComments.bind(this);
+        this.refreshPost = this.refreshPost.bind(this);
     }
 
     // 组件已挂载到 DOM后执行
@@ -91,7 +94,7 @@ class Post extends Component {
                  * 因为返回的帖子对象只有 author 的 id 信息，
                  * 所以需要额外把完整的author信息合并到帖子对象中
                  */
-                const newPost = {...data, author: this.props.post.author};
+                const newPost = {...data, author: this.state.post.author};
                 this.setState({
                     post: newPost,
                     editing: false
@@ -113,7 +116,6 @@ class Post extends Component {
     render () {
         const {post, comments, editing} = this.state;
         const {userId} = this.props;
-
         if (!post) {
             return null;
         }
@@ -137,7 +139,7 @@ class Post extends Component {
                     )
                 }
                 <CommentList
-                    components={comments}
+                    comments={comments}
                     editable={Boolean(userId)}
                     onSubmit={this.handleCommentSubmit}
                 />

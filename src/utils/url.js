@@ -5,7 +5,7 @@
  * @email: 342766475@qq.com
  * @Date: 2018-06-20 09:50:42
  * @Last Modified by: pycoder.Junting
- * @Last Modified time: 2018-06-20 10:12:34
+ * @Last Modified time: 2018-06-21 11:24:47
  */
 
  // 获取帖子列表的过滤条件
@@ -64,7 +64,7 @@
     // 更新帖子
     updatePost: id => `/post/${id}`,
     // 获取评论列表
-    getCommentList: postId => `/comment?filter=${commentListFilter(postId)}`,
+    getCommentList: postId => `/comment?filter=${encodeFilter(commentListFilter(postId))}`,
     // 新建评论
     createComment: () => "/comment"
  }

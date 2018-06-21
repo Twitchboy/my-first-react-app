@@ -9,7 +9,7 @@ class PostsView extends Component {
             <ul>
                 {
                     posts.map(item => (
-                        <Link key={item.id} to={`/post/${item.id}`}>
+                        <Link key={item.id} to={`/posts/${item.id}`}>
                             <PostItem post={item}/>
                         </Link>
                     ))
